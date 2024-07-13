@@ -1,0 +1,10 @@
+Jeremy Escobar
+11/20/2023
+CSE 543, Fall 2023
+
+Dependencies:
+
+The fuzzer script does not rely on any external Python packages. 
+It uses only modules from the Python Standard Library. It has been developed 
+and tested on Python 3.x. No additional installation steps for dependencies are 
+required (sys, random).

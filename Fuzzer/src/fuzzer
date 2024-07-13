@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+
+""" Jeremy Escobar, CSE 543, Fall 2023, 11/20/2023 """
+
+import sys     # Import the sys module for command line arguments
+import random  # Import the random module for random number generation
+
+MAX_ITERATIONS = 500         # Maximum number of iterations
+MAX_PROBABILITY = 0.13       # Maximum probability of mutation
+
+
+def execute_fuzzer(prng_seed, num_iterations, seed_filename='seed'):
+    """ Read the initial seed from the seed file """
+    try:
+        with open(seed_filename, 'rb') as sf:  # rb = read binary
+            string_seed = sf.read()            # Read the seed file
+    except FileNotFoundError:                  # If the file is not found
+        print("Cannot open read seed file. Exiting.", file=sys.stderr)
+        sys.exit(1)
+
+    """ Initialize PRNG with provided seed """
+    random.seed(prng_seed)
+
+    """ Start mutation process """
+    final_buffer = bytearray(
+        string_seed)  # Initialize the final buffer with the seed file contents
+    # Iterate over the number of iterations
+    for iteration in range(num_iterations):
+        # For each byte in the buffer, there's a chance to mutate based on MAX_PROBABILITY
+        for i in range(len(final_buffer)):
+            if random.random() < MAX_PROBABILITY:
+                # Randomly change the byte to a new value within the full byte range
+                final_buffer[i] = random.randint(0, 255)  # Mutate the buffer
+
+        # Every 500 iterations, extend the buffer with 10 additional random characters
+        if (iteration + 1) % MAX_ITERATIONS == 0:
+            for _ in range(10):
+                # Append the buffer with a random byte
+                final_buffer.append(random.randint(0, 255))
+
+    """ Write the mutated buffer to stdout """
+    sys.stdout.buffer.write(
+        final_buffer)  # Write the mutated buffer to stdout as a binary file (buffer)
+    """ Write the mutated buffer to the 'test.crash' file """
+    try:
+        with open('test.crash', 'wb') as cf:
+            cf.write(final_buffer)
+    except IOError as e:
+        print(f"Could not write to 'test.crash': {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3 or not all(arg.isdigit() for arg in sys.argv[1:3]):
+        print("Usage: fuzzer.py <prng_seed> <num_iterations>", file=sys.stderr)
+        sys.exit(1)
+
+    prng_seed = int(sys.argv[1])
+    num_iterations = int(sys.argv[2])
+
+    execute_fuzzer(prng_seed, num_iterations)  # Execute the fuzzer
