@@ -39,3 +39,9 @@ This project involves conducting a detailed vulnerability assessment of a home n
 
 #### **Summary:**
 The project effectively utilized Nessus to conduct a thorough security audit of a home network, identifying key vulnerabilities and offering actionable recommendations to enhance network security. This hands-on experience provided valuable insights into the practical application of network security tools and the importance of regular vulnerability assessments.
+
+### For example below I did a local scan, found vulnerabilities, then rescanned and no more existed, example Node was outdated and my router switch firmware was outdated and SNMP was enabled on the router to name a few critical issues found with scan.
+
+<img width="345" alt="Screenshot 2024-08-10 at 1 08 05 AM" src="https://github.com/user-attachments/assets/4a8f7430-a59b-4493-88ff-6ecd0be5469a">
+<img width="345" alt="Screenshot 2024-08-10 at 1 07 53 AM" src="https://github.com/user-attachments/assets/68d063d0-b3cd-4bbc-9560-d73ff5e39638">
+
