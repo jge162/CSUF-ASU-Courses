@@ -47,6 +47,8 @@ I performed a local scan and found several vulnerabilities, including an outdate
 
 ---
 
-<img width="345" height="auto" alt="Screenshot 2024-08-10 at 1 08 05 AM" src="https://github.com/user-attachments/assets/4a8f7430-a59b-4493-88ff-6ecd0be5469a">
-<img width="345" height="auto" alt="Screenshot 2024-08-10 at 1 07 53 AM" src="https://github.com/user-attachments/assets/68d063d0-b3cd-4bbc-9560-d73ff5e39638">
+<img width="345" height="259" alt="Screenshot 2024-08-10 at 1 07 53 AM" src="https://github.com/user-attachments/assets/68d063d0-b3cd-4bbc-9560-d73ff5e39638">
+<img width="345" height="259" alt="Screenshot 2024-08-10 at 1 08 05 AM" src="https://github.com/user-attachments/assets/4a8f7430-a59b-4493-88ff-6ecd0be5469a">
+
+
 
