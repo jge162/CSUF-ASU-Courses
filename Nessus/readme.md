@@ -42,7 +42,8 @@ The project effectively utilized Nessus to conduct a thorough security audit of 
 
 ---
 
-### For example, I performed a local scan and found several vulnerabilities, including an outdated version of Node.js, outdated firmware on my router switch, and SNMP being enabled on the router. After addressing these issues and rescanning, no more vulnerabilities were detected.
+#### Example Scan on Home Network:
+I performed a local scan and found several vulnerabilities, including an outdated version of Node.js, outdated firmware on my router switch, and SNMP being enabled on the router. After addressing these issues and rescanning, no more vulnerabilities were detected.
 
 ---
 
